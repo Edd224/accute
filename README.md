@@ -1,50 +1,43 @@
-# React + TypeScript + Vite
+ Inštalácia závislostí
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Použite npm alebo yarn na nainštalovanie všetkých potrebných závislostí:
 
-Currently, two official plugins are available:
+# Použitie npm
+npm install
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Alebo použitie yarn
+yarn install
 
-## Expanding the ESLint configuration
+Spustenie aplikácie
+# Použitie npm
+npm run dev
+yarn dev
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Tento príkaz spustí lokálny server a aplikácia bude dostupná na adrese:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+http://localhost:5173
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Build produkčnej verzie
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Ak chcete vytvoriť produkčnú verziu aplikácie, použite nasledujúci príkaz:
+
+# Použitie npm
+npm run build
+
+# Alebo použitie yarn
+yarn build
+
+Buildované súbory sa uložia do priečinka dist.
+
+Spustenie buildovanej verzie
+
+Ak chcete lokálne otestovať buildovanú verziu aplikácie, môžete spustiť server pomocou:
+
+# Použitie npm
+npm run preview
+
+# Alebo použitie yarn
+yarn preview
+
