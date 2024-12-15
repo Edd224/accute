@@ -58,69 +58,71 @@ const ProductsListing = () => {
 
 
   return (
-    <div>
-      <div className="grid grid-cols-1 mt-20 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {filteredProducts.map((product) => (
-          <div
-            key={product.id}
-            className="border shadow-lg rounded-lg overflow-hidden bg-white"
-          >
-            {/* Obrázok a tlačidlá v kontajneri */}
-            <div className="flex flex-col">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-64 object-cover"
-                onClick={() => openModal(product.image)} // Kliknutím na obrázok otvoríme modal
-              />
-              <div className="flex">
-                <button
-                  className="w-1/2 text-sm bg-gradient-to-r from-[--green] to-[--secundar] hover:from-[--secundar] hover:to-[--green] text-[--black] px-3 py-1 font-semibold flex justify-center items-center rounded-br-[30px]"
-                  onClick={() => handleAddToCart(product)}
-                >
-                  <FaShoppingCart className="mr-1" />
-                  Pridať do košíka
-                </button>
-                <button
-                  className="w-1/2 text-sm bg-gradient-to-r from-[--secundar] to-[--green] hover:from-[--green] hover:to-[--secundar] text-[--black] px-3 py-1 font-semibold rounded-tl-[30px]"
-                  onClick={() => handleAddToWishlist(product)}
-                >
-                  Pridať do obľúbených
-                </button>
+    <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
+      <div className="container px-5 sm:px-0 pb-8 sm:pb-0">
+        <div className="grid grid-cols-1 mt-20 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {filteredProducts.map((product) => (
+            <div
+              key={product.id}
+              className="border shadow-lg rounded-lg overflow-hidden bg-white"
+            >
+              {/* Obrázok a tlačidlá v kontajneri */}
+              <div className="flex flex-col">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-64 object-cover"
+                  onClick={() => openModal(product.image)} // Kliknutím na obrázok otvoríme modal
+                />
+                <div className="flex">
+                  <button
+                    className="w-1/2 text-sm bg-gradient-to-r from-[--green] to-[--secundar] hover:from-[--secundar] hover:to-[--green] text-[--black] px-3 py-1 font-semibold flex justify-center items-center rounded-br-[30px]"
+                    onClick={() => handleAddToCart(product)}
+                  >
+                    <FaShoppingCart className="mr-1" />
+                    Pridať do košíka
+                  </button>
+                  <button
+                    className="w-1/2 text-sm bg-gradient-to-r from-[--secundar] to-[--green] hover:from-[--green] hover:to-[--secundar] text-[--black] px-3 py-1 font-semibold rounded-tl-[30px]"
+                    onClick={() => handleAddToWishlist(product)}
+                  >
+                    Pridať do obľúbených
+                  </button>
+                </div>
+              </div>
+
+              {/* Informácie o produkte */}
+              <div className="p-4">
+                <h2 className="text-lg font-bold text-[--black] mb-2">
+                  {product.name}
+                </h2>
+                <p className="text-gray-700 italic mb-4">{product.description}</p>
+                <p className="font-bold text-green-500">&#8364;{product.price}</p>
               </div>
             </div>
+          ))}
+        </div>
 
-            {/* Informácie o produkte */}
-            <div className="p-4">
-              <h2 className="text-lg font-bold text-[--black] mb-2">
-                {product.name}
-              </h2>
-              <p className="text-gray-700 italic mb-4">{product.description}</p>
-              <p className="font-bold text-green-500">&#8364;{product.price}</p>
+        {/* Modal pre zobrazenie obrázku */}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
+            <div className="relative">
+              <button
+                className="absolute top-2 right-2 text-[--black] text-3xl"
+                onClick={closeModal}
+              >
+                &#10005; {/* X symbol */}
+              </button>
+              <img
+                src={modalImage!}
+                alt="Produkt"
+                className="max-w-full max-h-screen object-contain"
+              />
             </div>
           </div>
-        ))}
+        )}
+
       </div>
-
-      {/* Modal pre zobrazenie obrázku */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-          <div className="relative">
-            <button
-              className="absolute top-2 right-2 text-[--black] text-3xl"
-              onClick={closeModal}
-            >
-              &#10005; {/* X symbol */}
-            </button>
-            <img
-              src={modalImage!}
-              alt="Produkt"
-              className="max-w-full max-h-screen object-contain"
-            />
-          </div>
-        </div>
-      )}
-
     </div>
   );
 };

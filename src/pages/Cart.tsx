@@ -44,12 +44,13 @@ const Cart = () => {
 
   return (
     <ProtectedRoute>
-      <>
-        <div className="div">
-          <h2 className="font-myFont text-7xl py-5 text-transparent  bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Košík</h2>
-        </div>
+      <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
 
-        <div className="p-4 max-w-4xl mx-auto">
+        <div className="container pb-8 sm:pb-0 p-4 max-w-4xl mx-auto ">
+          <div className="div">
+            <h2 className="font-myFont text-7xl py-5 text-transparent  bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Košík</h2>
+          </div>
+
           {cartItems.length === 0 ? (
             <p className="flex justify-center items-center min-h-60 text-3xl text-gray-500 mx-auto">Košík je prázdny</p>
           ) : (
@@ -66,7 +67,7 @@ const Cart = () => {
                       className="w-28 h-28 m-2 object-cover rounded"
                     />
                     <button
-                      className="bg-[--secundar] text-[--black] p-2 text-sm rounded "
+                      className="bg-[--secundar] text-[--black] p-2 text-xs sm:text-sm  rounded "
                       onClick={() => handleViewDetails(item.id)}
                     >
                       Zobraziť detaily
@@ -75,17 +76,17 @@ const Cart = () => {
 
                   <div className="flex-1 ml-4 space-y-4">
                     <h3 className="font-bold text-2xl">{item.name}</h3>
-                    <p className="text-[--green] font-bold text-lg">{item.price} &#8364;</p>
+                    <p className="text-[--green] font-bold text-xl">{item.price} &#8364;</p>
                     <div className="flex items-center space-x-2">
                       <button
-                        className="bg-gray-300 hover:bg-red-400 w-10 h-10 rounded-full"
+                        className="bg-gray-300 hover:bg-red-400 w-8 h-8 sm:w-10 sm:h-10 rounded-full"
                         onClick={() => handleDecreaseQuantity(item.id)}
                       >
                         -
                       </button>
-                      <span className="text-xl font-semibold">{item.quantity}</span>
+                      <span className="text-sm sm:text-xl font-semibold">{item.quantity}</span>
                       <button
-                        className="bg-gray-300 hover:bg-[--green] w-10 h-10 rounded-full"
+                        className="bg-gray-300 hover:bg-[--green] w-8 h-8 sm:w-10 sm:h-10 rounded-full"
                         onClick={() => handleIncreaseQuantity(item.id)}
                       >
                         +
@@ -95,7 +96,7 @@ const Cart = () => {
                   </div>
                   <div className="flex flex-col items-end space-y-2">
                     <button
-                      className="flex justify-center items-center bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                      className="flex justify-center items-center bg-red-500 text-white px-4 py-2 text-xs sm:text-sm rounded hover:bg-red-600"
                       onClick={() => handleRemoveFromCart(item.id)}
                     >
                       <RiDeleteBinFill className="mr-2" />
@@ -105,7 +106,7 @@ const Cart = () => {
                 </div>
               ))}
               <div className="mt-10 text-right">
-                <h3 className="text-xl font-bold">Celková cena: {totalPrice} &#8364;</h3>
+                <h3 className="text-2xl font-bold">Celková cena:<span className="text-[--green] pl-2">{totalPrice} &#8364;</span></h3>
                 <div className="flex flex-col items-end">
                   <button
                     className="flex items-center bg-green-500 text-white px-4 py-2 rounded mt-2 hover:bg-green-600"
@@ -119,7 +120,7 @@ const Cart = () => {
             </div>
           )}
         </div>
-      </>
+      </div>
     </ProtectedRoute>
   );
 };

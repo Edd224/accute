@@ -2,30 +2,41 @@ import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
 import { Link } from "react-router-dom";
 import ProtectedRoute from "../components/ProtectedRoute";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 
-const Categories = () => {
+const Categories = () => { 
   const categories = useSelector((state: RootState) => state.categories.categories);
+   
+  useEffect(() => {
+        AOS.init();
+    }, []);
+
 
   return (
     <ProtectedRoute>
-      <div>
-        <div className="div">
-          <h1 className="font-myFont text-7xl py-5 text-transparent  bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Kategórie</h1>
-        </div>
-        <div className="flex flex-col justify-center items-center">
-          <ul className="space-y-4 text-3xl text-[--black] my-10">
-            {categories.map((category) => (
-              <li key={category.id}>
-                <Link
-                  to={`/products/${category.id}`}
-                  className="hover:bg-[--green] rounded px-3 py-2"
-                >
-                  {category.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+      <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
+        <div className="container pb-8 sm:pb-0">
+          <div className="flex flex-col justify-center items-center">
+            <div className="div">
+              <h1 className="font-myFont text-7xl py-5 text-transparent  bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Kategórie</h1>
+            </div>
+
+            <ul className="space-y-4 text-3xl text-[--black] my-10">
+              {categories.map((category) => (
+                <li key={category.id}>
+                  <Link
+                    to={`/products/${category.id}`}
+                    className="hover:bg-[--green] rounded px-3 py-2"
+                  >
+                    {category.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </ProtectedRoute>
