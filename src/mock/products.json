@@ -3,7 +3,7 @@
     "id": "1",
     "name": "T-shirt",
     "price": 19.99,
-    "image": "/src/assets/image/man1.jpg",
+    "image": "../images/man1.jpg",
     "description": "Comfortable cotton T-shirt.",
     "category": "1"
   },
@@ -11,7 +11,7 @@
     "id": "2",
     "name": "Jeans",
     "price": 49.99,
-    "image": "/src/assets/image/man2.jpg",
+    "image": "../images/man2.jpg",
     "description": "Classic denim jeans.",
     "category": "1"
   },
@@ -19,7 +19,7 @@
     "id": "3",
     "name": "Dress",
     "price": 79.99,
-    "image": "/src/assets/image/women1.jpg",
+    "image": "../images/women1.jpg",
     "description": "Elegant evening dress.",
     "category": "2"
   },
@@ -27,7 +27,7 @@
     "id": "4",
     "name": "Sneakers",
     "price": 89.99,
-    "image": "/src/assets/image/man3.jpg",
+    "image": "../images/man3.jpg",
     "description": "Stylish and comfortable sneakers.",
     "category": "1"
   },
@@ -35,7 +35,7 @@
     "id":"5",
     "name": "Jacket",
     "price": 129.99,
-    "image": "/src/assets/image/women2.jpg",
+    "image": "../images/women2.jpg",
     "description": "Warm winter jacket.",
     "category":"2"
   },
@@ -43,7 +43,7 @@
     "id": "6",
     "name": "Shirt",
     "price": 34.99,
-    "image": "/src/assets/image/man4.jpg",
+    "image": "../images/man4.jpg",
     "description": "Formal shirt for office wear.",
     "category": "1"
   },
@@ -51,7 +51,7 @@
     "id": "7",
     "name": "Sweater",
     "price": 54.99,
-    "image": "/src/assets/image/women3.jpg",
+    "image": "../images/women3.jpg",
     "description": "Cozy sweater for chilly days.",
     "category": "2"
   },
@@ -59,7 +59,7 @@
     "id": "8",
     "name": "Shorts",
     "price": 24.99,
-    "image": "/src/assets/image/man5.jpg",
+    "image": "../images/man5.jpg",
     "description": "Casual shorts for summer.",
     "category": "1"
   },
@@ -67,7 +67,7 @@
     "id": "9",
     "name": "Cap",
     "price": 15.99,
-    "image": "/src/assets/image/kids1.jpg",
+    "image": "../images/kids1.jpg",
     "description": "Trendy baseball cap.",
     "category": "3"
   },
@@ -75,7 +75,7 @@
     "id": "10",
     "name": "Skirt",
     "price": 39.99,
-    "image": "/src/assets/image/women4.jpg",
+    "image": "../images/women4.jpg",
     "description": "Stylish skirt for casual wear.",
     "category": "2"
   }
