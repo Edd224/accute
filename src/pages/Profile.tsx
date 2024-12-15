@@ -1,4 +1,4 @@
-import { jwtDecode } from "jwt-decode";
+import  jwtDecode  from "jwt-decode";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logOut } from "../features/auth/authSlice";
