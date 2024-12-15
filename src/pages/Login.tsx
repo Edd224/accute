@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode"; // Import jwt-decode
+import jwt_decode from "jwt-decode"; // Správny import výchozího exportu
 import { useDispatch } from "react-redux";
 import { logIn } from "../features/auth/authSlice"; // Import logIn akcie
 import users from "../mock/users.json";
@@ -25,7 +25,7 @@ const Login = () => {
       localStorage.setItem("token", token);
 
       // Dekódovanie tokenu
-      const decodedToken = jwtDecode(token);
+      const decodedToken = jwt_decode(token);
       console.log(decodedToken);
 
       // Zmena Redux stavu na prihláseného

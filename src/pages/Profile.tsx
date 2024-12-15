@@ -1,25 +1,20 @@
-import  jwtDecode  from "jwt-decode";
+import jwt_decode from "jwt-decode";  // Výchozí export
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { logOut } from "../features/auth/authSlice";
 
 const Profile = () => {
-  // Hook pre prístup k dispatch funkciám Reduxu
   const dispatch = useDispatch();
-  // Hook pre navigáciu medzi stránkami v rámci aplikácie
   const navigate = useNavigate();
 
   // Načítanie tokenu zo localStorage a dekódovanie údajov používateľa z tokenu
   const token = localStorage.getItem("token");
-  const user = token ? jwtDecode<{ userId: string; name: string }>(token) : null;
+  const user = token ? jwt_decode<{ userId: string; name: string }>(token) : null;
 
   // Funkcia pre odhlásenie používateľa
   const handleLogout = () => {
-    // Odstránenie tokenu z localStorage pri odhlásení
     localStorage.removeItem("token");
-    // Dispatch akcie pre odhlásenie (čistenie stavu v Redux store)
     dispatch(logOut());
-    // Navigácia na stránku prihlásenia po odhlásení
     navigate("/login");
   };
 
@@ -27,7 +22,9 @@ const Profile = () => {
     <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
       <div className="container pb-8 sm:pb-0">
         <div className="flex flex-col items-center justify-center">
-          <h1 className="font-myFont text-7xl text-transparent my-5 bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Profil</h1>
+          <h1 className="font-myFont text-7xl text-transparent my-5 bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">
+            Profil
+          </h1>
           {user && (
             <>
               <p className="text-4xl mb-2">Meno: {user.name}</p>
@@ -44,6 +41,5 @@ const Profile = () => {
     </div>
   );
 };
-
 
 export default Profile;

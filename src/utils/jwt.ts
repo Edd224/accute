@@ -1,4 +1,4 @@
-import  decode  from "jwt-decode"; // Named export pre jwt-decode@3.1.2
+import jwt_decode from "jwt-decode";  // Výchozí export
 
 import { saveToLocalStorage, getFromLocalStorage, removeFromLocalStorage } from './storage';
 
@@ -22,7 +22,7 @@ export const removeToken = () => {
 
 export const decodeToken = (token: string): DecodedToken | null => {
   try {
-    return decode(token) as DecodedToken; 
+    return jwt_decode(token) as DecodedToken;  // Používáme výchozí export
   } catch (error) {
     console.error("Chyba pri dekódovaní tokenu:", error);
     return null;
