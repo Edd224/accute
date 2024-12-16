@@ -29,10 +29,6 @@ const Cart = () => {
     dispatch(decreaseQuantity(id)); // Vykonanie akcie decreaseQuantity s ID položky
   };
 
-  // Funkcia na spracovanie pokladne (v tomto prípade len simulácia)
-  const handleCheckout = () => {
-    alert("Pokladňa je momentálne iba simulovaná. Ďakujeme za váš nákup!"); // Ukáže simulované hlásenie o pokladni
-  };
 
   // Funkcia na zobrazenie detailov produktu
   const handleViewDetails = (id: string) => {
@@ -41,6 +37,11 @@ const Cart = () => {
 
   // Výpočet celkovej ceny všetkých položiek v košíku
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  
+
+  const handleCheckout = () => {
+    navigate("/checkout"); // Presmerovanie na stránku Checkout
+  };
 
   return (
     <ProtectedRoute>

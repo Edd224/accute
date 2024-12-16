@@ -8,6 +8,8 @@ import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Home from "./pages/Home";
+import Checkout from "./pages/Checkout";
+import ThankYou from "./pages/ThankYou";
 
 const AppRoutes = () => {
   return (
@@ -18,6 +20,8 @@ const AppRoutes = () => {
       <Route path="/login" element={<Login />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/cart" element={<Cart />} />
+      <Route path="/checkout" element={<Checkout />} />
+      <Route path="/thank-you" element={<ThankYou />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/categories" element={<Categories />} />
       <Route path="/products/:category" element={<ProductsListing />} />
