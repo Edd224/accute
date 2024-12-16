@@ -10,7 +10,10 @@ import { useState } from "react";
 const Wishlist = () => {
     const dispatch = useDispatch();
     const wishlist = useSelector((state: RootState) => state.wishlist.items);
-    console.log("Wishlist items:", wishlist)
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    const [modalImage, setModalImage] = useState<string | null>(null);
+
+    console.log("Wishlist items:", wishlist);
 
     const handleRemove = (id: string) => {
         dispatch(removeFromWishlist(id));
@@ -26,31 +29,29 @@ const Wishlist = () => {
                 quantity: 1,
             })
         );
-        dispatch(removeFromWishlist(item.id)); // Odstráni produkt z wishlistu po pridaní do košíka
+        dispatch(removeFromWishlist(item.id));
     };
 
-    if (wishlist.length === 0) {
-        return <p className="flex justify-center items-center min-h-60 text-3xl text-gray-500">Položka obľúbené je prázdna</p>;
-    }
-
-
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false); // Stav pre modálne okno
-    const [modalImage, setModalImage] = useState<string | null>(null); // Uloženie URL obrázku pre modal
-
-
-    // Funkcia na otvorenie modálneho okna s obrázkom
     const openModal = (imageUrl: string) => {
         setModalImage(imageUrl);
         setIsModalOpen(true);
     };
 
-    // Funkcia na zatvorenie modálneho okna
     const closeModal = () => {
         setIsModalOpen(false);
         setModalImage(null);
     };
 
-
+    // Ak je wishlist prázdny, zobraz len správu, ale stále vykonaj hooky
+    if (wishlist.length === 0) {
+        return (
+            <ProtectedRoute>
+                <div className="flex justify-center items-center min-h-60">
+                    <p className="text-3xl text-gray-500">Položka obľúbené je prázdna</p>
+                </div>
+            </ProtectedRoute>
+        );
+    }
     return (
         <ProtectedRoute>
             <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
