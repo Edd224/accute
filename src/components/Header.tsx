@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../app/store";
 import { logOut } from "../features/auth/authSlice";
 import { useState } from "react";
+import logo from "../assets/image/logo.png"
 
 const Header = () => {
   const cartItemCount = useSelector((state: RootState) => state.cart.items.length);
@@ -20,8 +21,8 @@ const Header = () => {
   return (
     <header className="flex justify-between items-center p-4 border-b-2 bg-white shadow-md relative z-50">
       {/* Logo */}
-      <Link to="/home" className="text-xl font-bold">
-        Moja aplikácia
+      <Link to="/home" className="w-10">
+       <img src={logo} alt="" /> 
       </Link>
 
       {/* Hamburger Button (pre mobily) */}
