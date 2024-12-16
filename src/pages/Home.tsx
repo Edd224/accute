@@ -63,7 +63,7 @@ const Home = () => {
     return (
         <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center duration-200 ">
             
-            <div className="container pb-8 sm:pb-0">
+            <div className="container pb-8 px-10 py-4 sm:pb-0">
                 <Slider {...settings}>
                     {ImageList.map((data) => (
                         <div key={data.id}>

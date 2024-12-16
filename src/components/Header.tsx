@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-between items-center p-4 border-b-2 bg-white shadow-md relative z-50">
+    <header className="flex justify-between items-center px-10 py-4 border-b-2 bg-white shadow-md relative z-50">
       {/* Logo */}
       <Link to="/home" className="w-10">
        <img src={logo} alt="" /> 
@@ -38,7 +38,7 @@ const Header = () => {
       <nav
         className={`${
           isMenuOpen ? "flex" : "hidden"
-        } sm:flex flex-col sm:flex-row gap-4 uppercase text-sm font-semibold text-[--blue] absolute sm:static top-16 left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-md sm:shadow-none p-4 sm:p-0`}
+        } sm:flex flex-col sm:flex-row gap-4  text-sm font-semibold text-[--blue] absolute sm:static top-16 left-0 w-full sm:w-auto bg-white sm:bg-transparent shadow-md sm:shadow-none px-10 py-4 sm:p-0`}
         style={{
           zIndex: 100,
         }}

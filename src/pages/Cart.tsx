@@ -46,7 +46,7 @@ const Cart = () => {
     <ProtectedRoute>
       <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
 
-        <div className="container pb-8 sm:pb-0 p-4 max-w-4xl mx-auto ">
+        <div className="container pb-8 sm:pb-0 px-5 sm:px-10 py-4 max-w-4xl mx-auto ">
           <div className="div">
             <h2 className="font-myFont text-7xl py-5 text-transparent  bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Košík</h2>
           </div>

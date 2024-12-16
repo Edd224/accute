@@ -59,7 +59,7 @@ const ProductsListing = () => {
 
   return (
     <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
-      <div className="container px-5 sm:px-0 pb-8 sm:pb-0">
+      <div className="container px-5 sm:px-10 pb-8 sm:pb-0">
         <div className="grid grid-cols-1 mt-20 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product) => (
             <div

@@ -18,7 +18,7 @@ const Categories = () => {
   return (
     <ProtectedRoute>
       <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
-        <div className="container pb-8 sm:pb-0">
+        <div className="container pb-8 px-10 py-4 sm:pb-0">
           <div className="flex flex-col justify-center items-center">
             <div className="div">
               <h1 className="font-myFont text-7xl py-5 text-transparent  bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Kategórie</h1>

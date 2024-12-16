@@ -53,7 +53,7 @@ const Dashboard = () => {
     <ProtectedRoute>
 
       <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
-        <div className="container pb-8 sm:px-0 px-5 sm:pb-0 bg-[--white] mt-5">
+        <div className="container pb-8 sm:px-0 px-8 sm:pb-0 bg-[--white] mt-5">
           <h1 className="font-myFont text-7xl text-transparent my-4 bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Dashboard</h1>
 
           {/* Filtrácia podľa kategórie */}
@@ -65,7 +65,7 @@ const Dashboard = () => {
               </div>
 
               <select
-                className="border border-[--green] px-2 py-1 rounded-sm mx-5"
+                className="border border-[--green] px-2 py-1 rounded-sm mx-2"
                 value={selectedCategory || ""}
                 onChange={(e) => setSelectedCategory(e.target.value || null)}
               >
