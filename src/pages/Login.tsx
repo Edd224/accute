@@ -1,32 +1,33 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import jwt_decode from "jwt-decode"; // Správny import výchozího exportu
+// import jwt_decode from "jwt-decode"; // Správny import výchozího exportu
 import { useDispatch } from "react-redux";
 import { logIn } from "../features/auth/authSlice"; // Import logIn akcie
 import users from "../mock/users.json";
+import { SignJWT } from "jose";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch(); // Inicializácia dispatch
 
-  const handleLogin = () => {
+  const handleLogin = async () => {
     const user = users.find(
       (user) => user.email === email && user.password === password
     );
 
     if (user) {
-      // Testovací platný JWT token
-      const token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIn0.6k0NHO3sb9zOX6dR4jmYHz4TYZ8s5L2tRFL31ZkcTZU";
+      // Generovanie JWT tokenu pomocou jose
+      const token = await new SignJWT({ userId: user.id, name: user.name })
+        .setProtectedHeader({ alg: "HS256" })
+        .setExpirationTime("1h") // Token vyprší po 1 hodine
+        .sign(new TextEncoder().encode("secret-key")); // Tajný kľúč na podpisovanie tokenov
 
       // Uloženie tokenu do localStorage
       localStorage.setItem("token", token);
-
-      // Dekódovanie tokenu
-      const decodedToken = jwt_decode(token);
-      console.log(decodedToken);
 
       // Zmena Redux stavu na prihláseného
       dispatch(logIn());
@@ -37,6 +38,8 @@ const Login = () => {
       alert("Invalid credentials");
     }
   };
+
+
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
@@ -61,14 +64,29 @@ const Login = () => {
           <label htmlFor="password" className="block text-sm font-medium text-gray-600">
             Password
           </label>
-          <input
-            id="password"
-            type="password"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="flex items-center justify-center">
+            <input
+              id="password"
+              type={showPassword ? "text" : "password"} // Dynamický typ vstupu
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 mt-1 text-gray-700 bg-gray-100 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+            {/* Ikona oka */}
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)} // Prepínanie stavu
+              className="flex items-center text-[--black] ml-2"
+            >
+              {showPassword ? (
+                <FaEye className="h-5 w-5" />
+              ) : (
+                <FaEyeSlash className="h-5 w-5" />
+              )}
+            </button>
+
+          </div>
         </div>
         <button
           onClick={handleLogin}
