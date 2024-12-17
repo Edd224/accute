@@ -49,7 +49,7 @@ const Dashboard = () => {
       <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
         <div className="container pb-8 sm:px-0 px-8 sm:pb-0 bg-[--white] mt-5">
           <Breadcrumbs />
-          <h1 className="font-extrabold text-6xl text-transparent my-4 bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">
+          <h1 className="font-extrabold text-6xl text-transparent my-4 bg-clip-text bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900 via-purple-300 to-teal-500">
             Dashboard
           </h1>
 
@@ -94,7 +94,7 @@ const Dashboard = () => {
                   duration: 0.5, // Trvanie animácie
                   delay: index * 0.1, // Oneskorenie pre každý produkt
                 }}
-                className="flex-shrink-0 shadow-lg rounded-lg overflow-hidden bg-white"
+                className="flex-shrink-0  rounded-lg overflow-hidden bg-white"
                 style={{ width: "300px" }}
               >
                 <h3 className="text-3xl text-center">{product.name}</h3>
@@ -107,16 +107,16 @@ const Dashboard = () => {
                 <p className="font-bold text-[--green] text-2xl text-center">
                   &#8364;{product.price}
                 </p>
-                <div className="w-full flex">
+                <div className="w-full flex space-x-2">
                   <button
                     onClick={() => handleAddToCart(product)}
-                    className="w-1/2 flex justify-center text-sm items-center bg-gradient-to-r from-[--green] to-[--secundar] hover:from-[--secundar] hover:to-[--green] text-[--black] px-2 py-3 rounded rounded-br-[30px]"
+                    className="w-1/2 inline-flex items-center justify-center whitespace-nowrap rounded px-3.5 py-2.5 text-sm font-medium text-[--white] bg-gradient-to-r from-teal-700 to-teal-400  shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.5)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]"
                   >
                     <FaShoppingCart className="mr-1" /> Pridať do košíka
                   </button>
                   <button
                     onClick={() => goToProductDetails(product.id)}
-                    className="w-1/2 bg-gradient-to-r from-[--secundar] via-transparent to-[--green] hover:from-[--green] hover:to-[--secundar] text-[--black] text-sm px-2 py-3 rounded rounded-tl-[30px]"
+                    className="w-1/2 inline-flex justify-center whitespace-nowrap rounded px-3.5 py-2.5 text-sm font-medium text-slate-800 bg-gradient-to-bl from-yellow-50 via-neutral-100 to-stone-400 shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.2)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]"
                   >
                     Zobraziť detaily
                   </button>

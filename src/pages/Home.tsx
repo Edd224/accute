@@ -74,7 +74,7 @@ const Home = () => {
                                         data-aos="zoom-out"
                                         data-aos-duration="1000"
                                         data-aos-once="true"
-                                        className="text-5xl sm:text-6xl lg:text-7xl font-bold"
+                                        className="text-5xl sm:text-6xl lg:text-7xl font-bold text-transparent bg-clip-text bg-[radial-gradient(ellipse_at_right,_var(--tw-gradient-stops))] from-emerald-900 via-purple-300 to-teal-500"
                                     >
                                         {data.title}
                                     </h1>
@@ -93,7 +93,7 @@ const Home = () => {
                                     >
                                         <button
                                             onClick={() => navigate("/login")} // Navigácia na stránku prihlásenia
-                                            className="bg-[--green] hover:scale-105 duration-200 text-white py-2 px-4 rounded"
+                                            className="inline-flex items-center justify-center whitespace-nowrap rounded px-3.5 py-2.5 text-sm font-medium text-[--white] bg-gradient-to-r from-teal-700 to-teal-400  shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.5)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]"
                                         >
                                             Prihlásiť sa
                                         </button>

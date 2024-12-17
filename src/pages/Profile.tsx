@@ -24,7 +24,7 @@ const Profile = () => {
       <div className="container pb-8 sm:pb-0">
         <Breadcrumbs />
         <div className="flex flex-col items-center justify-center">
-          <h1 className="font-extrabold text-6xl text-transparent my-5 bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">
+          <h1 className="font-extrabold text-6xl text-transparent my-5 bg-clip-text bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900 via-purple-300 to-teal-500">
             Profil
           </h1>
           {user && (

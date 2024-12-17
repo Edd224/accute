@@ -58,7 +58,7 @@ const Wishlist = () => {
             <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
                 <div className="container px-5 sm:px-10 pb-8 sm:pb-0">
                     <Breadcrumbs />
-                    <h1 className="font-extrabold text-6xl py-5 text-transparent bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">
+                    <h1 className="font-extrabold text-6xl py-5 text-transparent bg-clip-text bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900 via-purple-300 to-teal-500">
                         Obľúbené
                     </h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

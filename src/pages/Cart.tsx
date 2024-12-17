@@ -53,7 +53,7 @@ const Cart = () => {
             <Breadcrumbs />
           </div>
           <div className="div">
-            <h2 className="font-extrabold text-6xl py-5 text-transparent  bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Košík</h2>
+            <h2 className="font-extrabold text-6xl py-5 text-transparent bg-clip-text bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900 via-purple-300 to-teal-500">Košík</h2>
           </div>
 
           {cartItems.length === 0 ? (
