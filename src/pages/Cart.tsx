@@ -5,6 +5,7 @@ import { removeFromCart, increaseQuantity, decreaseQuantity } from "../features/
 import ProtectedRoute from "../components/ProtectedRoute";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { LiaCashRegisterSolid } from "react-icons/lia";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const Cart = () => {
   // Načítanie položiek z Redux stavu
@@ -37,7 +38,7 @@ const Cart = () => {
 
   // Výpočet celkovej ceny všetkých položiek v košíku
   const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
-  
+
 
   const handleCheckout = () => {
     navigate("/checkout"); // Presmerovanie na stránku Checkout
@@ -45,11 +46,14 @@ const Cart = () => {
 
   return (
     <ProtectedRoute>
-      <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
 
+      <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
         <div className="container pb-8 sm:pb-0 px-5 sm:px-10 py-4 max-w-4xl mx-auto ">
+          <div>
+            <Breadcrumbs />
+          </div>
           <div className="div">
-            <h2 className="font-myFont text-7xl py-5 text-transparent  bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Košík</h2>
+            <h2 className="font-extrabold text-6xl py-5 text-transparent  bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Košík</h2>
           </div>
 
           {cartItems.length === 0 ? (

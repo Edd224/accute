@@ -5,23 +5,25 @@ import ProtectedRoute from "../components/ProtectedRoute";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from "react";
+import Breadcrumbs from "../components/Breadcrumbs";
 
 
-const Categories = () => { 
+const Categories = () => {
   const categories = useSelector((state: RootState) => state.categories.categories);
-   
+
   useEffect(() => {
-        AOS.init();
-    }, []);
+    AOS.init();
+  }, []);
 
 
   return (
     <ProtectedRoute>
       <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
         <div className="container pb-8 px-10 py-4 sm:pb-0">
+          <Breadcrumbs />
           <div className="flex flex-col justify-center items-center">
             <div className="div">
-              <h1 className="font-myFont text-7xl py-5 text-transparent  bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Kategórie</h1>
+              <h1 className="font-extrabold text-6xl py-5 text-transparent  bg-clip-text bg-gradient-to-l from-[#676cab] via-amber-600 to-[#be8aa9]">Kategórie</h1>
             </div>
 
             <ul className="space-y-4 text-3xl text-[--black] my-10">

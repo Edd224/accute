@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../app/store";
 import { clearCart } from "../features/cart/cartSlice";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
+import Breadcrumbs from "../components/Breadcrumbs";
 
 const Checkout = () => {
   const cartItems = useSelector((state: RootState) => state.cart.items);
@@ -23,6 +24,7 @@ const Checkout = () => {
   return (
     <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
       <div className="container pb-8 px-10 py-4 sm:pb-0">
+        <Breadcrumbs />
         <h1 className="text-2xl font-bold">Checkout</h1>
         <h2 className="mt-4">Prehľad objednávky</h2>
         <ul className="border p-4">
