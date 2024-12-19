@@ -72,7 +72,7 @@ const Cart = () => {
                       className="w-28 h-28 m-2 object-cover rounded"
                     />
                     <button
-                      className="bg-[--secundar] text-[--black] p-2 text-xs sm:text-sm  rounded "
+                      className="inline-flex text-xs justify-center whitespace-nowrap rounded px-3.5 py-2.5 font-medium text-slate-800 bg-gradient-to-bl from-yellow-50 via-neutral-100 to-stone-400 shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.2)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]"
                       onClick={() => handleViewDetails(item.id)}
                     >
                       Zobraziť detaily
@@ -114,7 +114,7 @@ const Cart = () => {
                 <h3 className="text-2xl font-bold">Celková cena:<span className="text-[--green] pl-2">{totalPrice} &#8364;</span></h3>
                 <div className="flex flex-col items-end">
                   <button
-                    className="flex items-center bg-green-500 text-white px-4 py-2 rounded mt-2 hover:bg-green-600"
+                    className="items-center inline-flex  justify-center my-2 whitespace-nowrap rounded px-3.5 py-2.5 text-sm font-medium text-[--white] bg-gradient-to-r from-teal-700 to-teal-400  shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.5)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]"
                     onClick={handleCheckout}
                   >
                     <LiaCashRegisterSolid className="mr-2" />

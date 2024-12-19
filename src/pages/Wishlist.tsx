@@ -7,6 +7,8 @@ import { FaShoppingCart } from "react-icons/fa";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { useState } from "react";
 import Breadcrumbs from "../components/Breadcrumbs";
+import { motion, AnimatePresence } from "framer-motion"; // Import Framer Motion
+
 
 const Wishlist = () => {
     const dispatch = useDispatch();
@@ -76,16 +78,16 @@ const Wishlist = () => {
                                         onClick={() => openModal(item.image)} // Kliknutím na obrázok otvoríme modal
 
                                     />
-                                    <div className="flex">
+                                    <div className="flex space-x-2">
                                         <button
-                                            className="w-1/2 text-sm bg-gradient-to-r from-red-500 via-transparent to-red-800 hover:bg-red-500 text-[--black] px-3 py-2 font-semibold flex justify-center items-center rounded-br-[30px]"
+                                            className="w-1/2 inline-flex items-center justify-center whitespace-nowrap rounded px-3.5 py-2.5 text-sm font-medium text-[--white] bg-gradient-to-r from-red-700 to-red-400  shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.5)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]"
                                             onClick={() => handleRemove(item.id)}
                                         >
                                             <RiDeleteBinFill className="mr-2" />
                                             Odstrániť
                                         </button>
                                         <button
-                                            className="w-1/2 text-sm bg-gradient-to-r from-[--green] via-transparent to-[--secundar] hover:bg-[--green] text-[--black] px-3 py-2 font-semibold flex justify-center items-center rounded-tl-[30px]"
+                                            className="w-1/2 inline-flex items-center justify-center whitespace-nowrap rounded px-3.5 py-2.5 text-sm font-medium text-[--white] bg-gradient-to-r from-teal-700 to-teal-400  shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.5)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]"
                                             onClick={() => handleAddToCart(item)}
                                         >
                                             <FaShoppingCart className="mr-2" />
@@ -107,21 +109,35 @@ const Wishlist = () => {
 
                     {/* Modal pre zobrazenie obrázku */}
                     {isModalOpen && (
-                        <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
-                            <div className="relative">
-                                <button
-                                    className="absolute top-2 right-2 text-[--black] text-3xl"
-                                    onClick={closeModal}
+                        <AnimatePresence>
+                            <motion.div
+                                initial={{ opacity: 0 }} // Počiatočný stav (priehľadný)
+                                animate={{ opacity: 1 }} // Animovaný stav (viditeľný)
+                                exit={{ opacity: 0 }} // Stav pri zatváraní (fade-out)
+                                transition={{ duration: 0.3 }} // Dĺžka trvania animácie
+                                className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50"
+                            >
+                                <motion.div
+                                    initial={{ scale: 0.8, opacity: 0 }} // Menší a priehľadný
+                                    animate={{ scale: 1, opacity: 1 }} // Priblížený a viditeľný
+                                    exit={{ scale: 0.8, opacity: 0 }} // Stav pri zatváraní
+                                    transition={{ duration: 0.3, ease: "easeOut" }} // Hladká animácia
+                                    className="relative"
                                 >
-                                    &#10005; {/* X symbol */}
-                                </button>
-                                <img
-                                    src={modalImage!}
-                                    alt="Produkt"
-                                    className="max-w-full max-h-screen object-contain"
-                                />
-                            </div>
-                        </div>
+                                    <button
+                                        className="absolute top-2 right-2 text-white text-3xl"
+                                        onClick={closeModal}
+                                    >
+                                        &#10005; {/* X symbol */}
+                                    </button>
+                                    <img
+                                        src={modalImage!}
+                                        alt="Produkt"
+                                        className="max-w-full max-h-screen object-contain rounded-lg shadow-lg"
+                                    />
+                                </motion.div>
+                            </motion.div>
+                        </AnimatePresence>
                     )}
                 </div>
             </div>

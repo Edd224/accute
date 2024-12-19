@@ -8,7 +8,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import ProtectedRoute from "../components/ProtectedRoute";
 import useHorizontalScroll from "../features/useHorizontalScroll";
 import Breadcrumbs from "../components/Breadcrumbs";
-
+ 
 const Dashboard = () => {
   const categories = useSelector((state: RootState) => state.categories.categories);
   const products = useSelector((state: RootState) => state.products.products);

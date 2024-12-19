@@ -77,7 +77,7 @@ const ProductDetails = () => {
         />
 
         {/* Popis produktu */}
-        <div className="flex flex-col justify-between md:w-1/2">
+        <div className="flex flex-col justify-between items-center md:w-1/2">
           <h1 className="text-3xl font-bold mb-2">{product.name}</h1>
           <p className="text-gray-700 italic mb-4">{product.description}</p>
           <p className="text-green-500 font-bold text-xl mb-6">
@@ -85,14 +85,14 @@ const ProductDetails = () => {
           </p>
           <div className="flex flex-col space-y-2">
             <button
-              className="flex items-center justify-center w-1/2  bg-gradient-to-t from-[--green] to-[--secundar] hover:from-[--secundar] hover:to-[--green] text-[--black] px-4 py-2 rounded mr-2 rounded-br-[30px]"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded px-3.5 py-2.5 text-sm font-medium text-[--white] bg-gradient-to-r from-teal-700 to-teal-400  shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.5)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]"
               onClick={handleAddToCart}
             >
               <FaShoppingCart className="mr-2" />
               Pridať do košíka
             </button>
             <button
-              className="w-1/2 bg-gradient-to-t from-[--secundar] to-[--green] hover:from-[--green] hover:to-[--secundar] text-[--black] px-4 py-2 rounded rounded-tl-[30px]"
+              className="inline-flex justify-center whitespace-nowrap rounded px-3.5 py-2.5 text-sm font-medium text-slate-800 bg-gradient-to-bl from-yellow-50 via-neutral-100 to-stone-400 shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.2)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]"
               onClick={handleAddToWishlist}
             >
               Pridať do obľúbených

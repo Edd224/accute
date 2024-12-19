@@ -31,7 +31,7 @@ const Categories = () => {
                 <li key={category.id}>
                   <Link
                     to={`/products/${category.id}`}
-                    className="hover:bg-[--green] rounded px-3 py-2"
+                    className="hover:text-[--green] rounded px-3 py-2"
                   >
                     {category.name}
                   </Link>

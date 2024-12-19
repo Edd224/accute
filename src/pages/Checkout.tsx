@@ -47,7 +47,7 @@ const Checkout = () => {
           <input type="text" placeholder="Meno" className="border p-2 w-full mb-4" required />
           <input type="text" placeholder="Adresa" className="border p-2 w-full mb-4" required />
           <input type="text" placeholder="Platobné údaje" className="border p-2 w-full mb-4" required />
-          <button type="submit" className="bg-[--green] text-white p-2 rounded">
+          <button type="submit" className="inline-flex items-center justify-center whitespace-nowrap rounded px-3.5 py-2.5 text-sm font-medium text-[--white] bg-gradient-to-r from-teal-700 to-teal-400  shadow focus:outline-none focus:ring focus:ring-slate-500/50 focus-visible:outline-none focus-visible:ring focus-visible:ring-slate-500/50 relative before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,theme(colors.white/.5)_50%,transparent_75%,transparent_100%)] before:bg-[length:250%_250%,100%_100%] before:bg-[position:200%_0,0_0] before:bg-no-repeat before:[transition:background-position_0s_ease] hover:before:bg-[position:-100%_0,0_0] hover:before:duration-[1500ms]">
             Potvrdiť objednávku
           </button>
         </form>
