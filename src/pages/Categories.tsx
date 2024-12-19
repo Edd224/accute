@@ -20,7 +20,9 @@ const Categories = () => {
     <ProtectedRoute>
       <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
         <div className="container pb-8 px-10 py-4 sm:pb-0">
-          <Breadcrumbs />
+          <div className="absolute top-5 left-10">
+            <Breadcrumbs />
+          </div>
           <div className="flex flex-col justify-center items-center">
             <div className="div">
               <h1 className="font-extrabold text-6xl py-5 text-transparent bg-clip-text bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900 via-purple-300 to-teal-500">Kategórie</h1>

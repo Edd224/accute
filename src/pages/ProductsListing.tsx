@@ -67,7 +67,9 @@ const ProductsListing = () => {
   return (
     <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
       <div className="container px-5 sm:px-10 pb-8 sm:pb-0">
-        <Breadcrumbs />
+        <div className="absolute top-5 left-10">
+          <Breadcrumbs />
+        </div>
         <div className="grid grid-cols-1 mt-20 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredProducts.map((product, index) => (
             <motion.div
@@ -76,7 +78,7 @@ const ProductsListing = () => {
               initial="hidden" // Počiatočný stav
               animate="visible" // Animovaný stav
               custom={index} // Vlastná hodnota pre oneskorenie
-              className="border shadow-lg rounded-lg overflow-hidden bg-white"
+              className="border border-[--green]/50 rounded-lg overflow-hidden bg-white"
             >
               <div className="flex flex-col">
                 <img

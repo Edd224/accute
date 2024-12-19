@@ -8,7 +8,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import ProtectedRoute from "../components/ProtectedRoute";
 import useHorizontalScroll from "../features/useHorizontalScroll";
 import Breadcrumbs from "../components/Breadcrumbs";
- 
+
 const Dashboard = () => {
   const categories = useSelector((state: RootState) => state.categories.categories);
   const products = useSelector((state: RootState) => state.products.products);
@@ -48,8 +48,10 @@ const Dashboard = () => {
     <ProtectedRoute>
       <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
         <div className="container pb-8 sm:px-0 px-8 sm:pb-0 bg-[--white] mt-5">
-          <Breadcrumbs />
-          <h1 className="font-extrabold text-6xl text-transparent my-4 bg-clip-text bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900 via-purple-300 to-teal-500">
+          <div className="absolute top-5 left-10">
+            <Breadcrumbs />
+          </div>
+          <h1 className="font-extrabold text-6xl text-transparent my-8 bg-clip-text bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-emerald-900 via-purple-300 to-teal-500">
             Dashboard
           </h1>
 
@@ -83,7 +85,7 @@ const Dashboard = () => {
           {/* Horizontálne scrollovanie produktov */}
           <div
             ref={scrollRef}
-            className="mt-20 flex gap-4 overflow-x-auto scrollbar-hide p-4"
+            className="mt-16 flex gap-4 overflow-x-auto scrollbar-hide p-4"
           >
             {filteredProducts.map((product, index) => (
               <motion.div

@@ -49,7 +49,7 @@ const Cart = () => {
 
       <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-[--white] flex justify-center items-center">
         <div className="container pb-8 sm:pb-0 px-5 sm:px-10 py-4 max-w-4xl mx-auto ">
-          <div>
+          <div className="absolute top-5 left-10">
             <Breadcrumbs />
           </div>
           <div className="div">
